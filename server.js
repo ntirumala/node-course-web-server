@@ -38,11 +38,13 @@ app.get('/about', (request, response) =>{
   })
 })
 
-app.get('/bad', (request, response) =>{
-  response.send({
-    errorMessage: 'Unable to handle request'
+app.get('/projects', (request, response) =>{
+    response.render('projects.hbs',{
+      pageTitle: 'My projects',
+      pageData: ['nodejs', 'mule esb']
+    })
   })
-})
+
 
 app.listen(port, ()=>{
   console.log(`server listining on port ${port}`)
